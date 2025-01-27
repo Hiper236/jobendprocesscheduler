@@ -1,0 +1,89 @@
+Index 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coding&Color - DS - 4AI</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Oggi è il 30 settembre 2024 </h1>
+      <div id="title">
+      <div id="input">
+      <div id="output">
+    <script src="script.js"></script>
+    <label for="inNumber">Inserisci un numero</label>
+    <input id="inNumber" placeholder="numero">
+        <div></div>
+<label for="inTesto">Inserisci un testo</label>
+         <input id="inTesto" placeholder="testo">
+        <div></div>
+    <button type="button" id="btnElabora" onclick="elabora()">Elabora</button>
+        <button type="button" id="btnAnnulla" onclick="annulla()">Annulla</button>
+        <button type="button" id="btnArray" onclick="elaboraarray()">Elabora array</button>
+        <div></div>
+        <img src="https://static8.depositphotos.com/1338574/829/i/450/depositphotos_8293068-stock-photo-numbers-in-gold.jpg" alt="immagine di numeri">
+  </body>
+</html>
+
+JAVA
+console.log("inizio script");
+let numbers = [];
+function elaboraarray(){
+  console.log(numbers.length); //0
+  numbers.push(123); //inserito un elemento, l=1
+  numbers[1] = 15; //inserito un altro elemento, l=2
+  console.log(numbers);
+  let n = numbers.pop(); //tolto il 15
+  console.log(n);
+  numbers.unshift(48); //inserito in testa un elemento
+  for (let i = 0; i < numbers.length; i++){
+    console.log("i: ", i, " valore: ", numbers[i]);
+  }
+  
+}
+
+function scopri(){
+  let s = "123,13" + " euro"; //123,134 euro
+  let pi;
+  let pf;
+  console.log(s.length); //12
+  console.log(s[3]); //,
+  pi = s.slice(0,3);
+  pf = s.slice(4,2);
+
+  //usare substring
+
+  //uso split
+  let arr = numbers.split(','); //"123" "13 euro"
+  for (let n of arr) {
+     console.log( `numero ${n}` ); // contenuto array arr
+}
+  
+}
+function elabora(){
+  numbers=[12,145,200];
+  console.log(numbers);
+  let testo = document.getElementById("inNumber").value;
+  alert(testo);
+  //validazione
+  if (testo == ""){
+    alert("inserisci un numero tra 1 e 100");
+  }
+  else if (testo>1 && testo<100) { 
+    console.log("numero; " + testo);
+    alert("ok broski");
+  }
+  else {
+    alert("cambia numero");
+  }
+}
+function annulla(){
+  document.getElementById("inNumber").value = "";
+}
+CSS
+body {
+  /* Add styles here! */
+background-color:rgb(0,0,255);
+  color:rgb(0,255,0);
+}
